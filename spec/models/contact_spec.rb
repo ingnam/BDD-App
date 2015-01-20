@@ -16,5 +16,9 @@ RSpec.describe Contact, type: :model do
   	FactoryGirl.build(:contact, last_name: nil).should_not be_valid
   end
 
-  it "returns a contact's full name as a string"
+	# Testing instance methods 
+  it "returns a contact's full name as a string" do
+  	contact = FactoryGirl.create(:contact, first_name: "Madan", last_name: "Ingnam")
+  	contact.name.should == "Madan Ingnam"
+  end
 end
